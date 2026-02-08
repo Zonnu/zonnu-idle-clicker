@@ -1,4 +1,4 @@
-use strict;
+"use strict";
 // ===== DOM =====
 const btnPng = document.getElementById("btn_png")
 const btnGoldenPng = document.getElementById("btn_golden_png")
