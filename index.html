@@ -1,0 +1,88 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <!-- Basic metadata and title -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zonnu Idle Clicker</title>
+  <!-- Link the page styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Main app container -->
+  <main class="app">
+    <header class="header">
+      <h1 class="title">ZONNU IDLE CLICKER</h1>
+
+      <!-- Top stats panel -->
+      <section class="stats">
+        <div class="stat">
+          <div class="stat__label">Score</div>
+          <div id="scoreDisplay" class="stat__value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">CPS</div>
+          <div id="cpsDisplay" class="stat__value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Click Power</div>
+          <div id="clickPowerDisplay" class="stat__value">1</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Clicks</div>
+          <div id="clickCountDisplay" class="stat__value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Trophies</div>
+          <div id="trophyCount" class="stat__value">0</div>
+        </div>
+      </section>
+    </header>
+
+    <!-- Current level target -->
+    <section class="goal">
+      <div id="targetDisplay" class="target">LEVEL 1 : 10</div>
+      <div id="targetMessage" class="target-message"></div>
+    </section>
+
+    <!-- Click area -->
+    <section class="play">
+      <div class="button-area">
+        <!-- Normal button image -->
+        <img id="btn_png" class="button-image" src="png/Bouton.png" alt="Button" />
+        <!-- Golden button image (shown when a level is complete) -->
+        <img id="btn_golden_png" class="button-image button-image--golden" src="png/BoutonGolden.png" alt="Golden Button" />
+        <!-- Invisible button over the image so clicks are easy -->
+        <button id="clickButton" class="overlay-button" type="button" aria-label="Click"></button>
+      </div>
+    </section>
+
+    <!-- Shop area -->
+    <section class="shop">
+      <h2 class="section-title">Shop</h2>
+
+      <div class="shop-grid">
+        <!-- Buy CPS -->
+        <button id="buyCps" class="btn" type="button">Buy +1 CPS</button>
+        <div id="cpsCost" class="hint">Cost: 10</div>
+
+        <!-- Buy click power -->
+        <button id="buyClickPower" class="btn" type="button">Buy +1 Click Power</button>
+        <div id="clickPowerCost" class="hint">Cost: 25</div>
+      </div>
+
+      <!-- Small status message -->
+      <div id="statusLine" class="status"></div>
+    </section>
+
+    <!-- Footer with trophy + reset -->
+    <footer class="footer">
+      <button id="resetSave" class="btn btn--ghost" type="button">Reset Save</button>
+    </footer>
+  </main>
+
+  <!-- Game logic -->
+  <script src="script.js"></script>
+</body>
+</html>

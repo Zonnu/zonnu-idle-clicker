@@ -1,0 +1,219 @@
+/* Simple reset so sizes include borders and padding */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/* Design tokens (colors, spacing, radius) */
+:root{
+  --bg: #0f0f0f;
+  --panel: #171717;
+  --panel2: #111;
+  --fg: #eaeaea;
+  --muted: #9a9a9a;
+  --accent: #4da3ff;
+  --ok: #00ff88;
+  --warn: #ffcc66;
+
+  --radius: 14px;
+  --gap: 1rem;
+}
+
+/* Page base styles */
+body{
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Main app card */
+.app{
+  width: min(720px, 96vw);
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Title */
+.title{
+  margin: 0;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: .04em;
+}
+
+/* Top stats grid */
+.stats{
+  margin-top: .75rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .75rem;
+}
+
+/* Each stat card */
+.stat{
+  background: var(--panel2);
+  border-radius: 12px;
+  padding: .75rem .6rem;
+  text-align: center;
+}
+
+.stat__label{
+  font-size: .75rem;
+  color: var(--muted);
+}
+
+.stat__value{
+  margin-top: .25rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+/* Target / level box */
+.goal{
+  background: var(--panel2);
+  border-radius: 12px;
+  padding: .8rem 1rem;
+  display: grid;
+  gap: .5rem;
+  text-align: center;
+}
+
+.target{ font-weight: 800; }
+
+/* Message below the target */
+.target-message{
+  min-height: 1.2em;
+  color: var(--ok);
+  font-weight: 700;
+}
+
+/* Center the click area */
+.play{
+  display: grid;
+  justify-items: center;
+  padding: .25rem 0;
+}
+
+/* Image button wrapper */
+.button-area{
+  position: relative;
+  width: min(260px, 72vw);
+}
+
+/* Button image */
+.button-image{
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Hidden by default, shown on level complete */
+.button-image--golden{ display: none; }
+
+/* Transparent button that sits over the image */
+.overlay-button{
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.overlay-button:active{ transform: scale(0.99); }
+
+/* Shop header */
+.section-title{
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* Shop panel */
+.shop{
+  background: var(--panel2);
+  border-radius: 12px;
+  padding: 1rem;
+  display: grid;
+  gap: .75rem;
+}
+
+/* Grid for shop rows */
+.shop-grid{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .75rem;
+  align-items: center;
+}
+
+/* Base button style */
+.btn{
+  padding: .85rem 1rem;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btn:hover{ opacity: .92; }
+
+/* Disabled button state */
+.btn:disabled{
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+/* Secondary button style */
+.btn--ghost{
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid #2a2a2a;
+  font-weight: 800;
+}
+
+/* Small hint text (cost) */
+.hint{
+  color: var(--muted);
+  font-size: .9rem;
+  text-align: right;
+}
+
+/* Status line under the shop */
+.status{
+  min-height: 1.2em;
+  color: var(--warn);
+  font-size: .9rem;
+}
+
+/* Footer layout */
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+/* Trophy image size */
+.trophy-image{
+  width: 42px;
+  opacity: .9;
+}
+
+/* Mobile layout tweaks */
+@media (max-width: 700px){
+  .stats{ grid-template-columns: repeat(2, 1fr); }
+  .shop-grid{ grid-template-columns: 1fr; }
+  .hint{ text-align: left; }
+}
