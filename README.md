@@ -27,11 +27,10 @@ Click to earn score, buy upgrades, and clear levels to earn trophies.
 1. Open `index.html` in your browser
 2. Or use VS Code Live Server
 
-## Roadmap (optional)
+## Roadmap
 - More upgrades (multiplier / crit)
 - Visual polish and feedback
-- Settings for offline gains cap
 
 ## Screenshots
 ![Main screen](screenshots/main.png)
-![Shop](screenshots/victory.png)
+![Victory_screen](screenshots/victory.png)
